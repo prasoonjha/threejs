@@ -1,0 +1,23 @@
+{
+  "name": "threejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prasoonjha/threejs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prasoonjha/threejs/issues"
+  },
+  "homepage": "https://github.com/prasoonjha/threejs#readme",
+  "devDependencies": {
+    "@types/three": "^0.139.0",
+    "three": "^0.140.0"
+  }
+}
