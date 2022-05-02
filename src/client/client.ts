@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import Stats from "three/examples/jsm/libs/stats.module";
-
+import { GUI } from "dat.gui";
 //first and foremost, add a scene
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x000000);
@@ -21,7 +21,7 @@ document.body.appendChild(renderer.domElement);
 /**
  * add orbit controls and attach onchange event listener
  * NOTE: if you do not need to attach an event listener, you can instead choose to only instantiate a new OrbitControl
- * object with usual constructor 
+ * object with usual constructor
  * just make sure you add it only after scene and renderer has been declared
  */
 
@@ -49,15 +49,17 @@ function onWindowResize() {
 const stats = Stats();
 document.body.appendChild(stats.dom);
 
+const gui = new GUI();
+gui.add(cube.rotation, "x", 0, 2 * Math.PI);
 /**
  * the animation loop, a function that calls itself, using the requestAnimationFrame api
- * dump all your heavy animation computations inside this loop 
+ * dump all your heavy animation computations inside this loop
  */
 function animate() {
   cube.rotation.x += 0.001;
-  cube.rotation.y -= 0.001;
+  cube.rotation.y += 0.001;
   stats.update();
-  // render();
+  render();
 
   //executes the callback just before when the browser is ready for a repaint
   requestAnimationFrame(animate);
